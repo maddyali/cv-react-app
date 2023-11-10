@@ -1,0 +1,14 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* MY STYLES */
+
+.resume-container {
+  width: 500px;
+  height: 500px;
+  float: right;
+}
