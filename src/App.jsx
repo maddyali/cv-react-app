@@ -1,21 +1,27 @@
+import { useState } from "react";
 import "./App.css";
 import exampleCV from "./exampleCV";
 import Resume from "./components/Resume";
-import AddDetailsSection from "./components/AddDetailsSection";
-
+import AddContactSection from "./components/AddContactSection";
+import AddEducationSection from "./components/AddEducationSection";
+import AddExperienceSection from "./components/AddExperienceSection";
 function App() {
-  const { contactInfo, educationInfo, experienceInfo } = exampleCV;
+  // const { contactInfo, educationInfo, experienceInfo } = exampleCV;
+
+  const [contact, setContact] = useState(exampleCV.contactInfo);
+  const [education, setEducation] = useState(exampleCV.educationInfo);
+  const [experience, setExperience] = useState(exampleCV.experienceInfo);
 
   return (
     <>
-      <AddDetailsSection sectionName="Contact" />
-      <AddDetailsSection sectionName="Education" />
-      <AddDetailsSection sectionName="Experience" />
+      <AddContactSection />
+      <AddEducationSection />
+      <AddExperienceSection />
 
       <Resume
-        contactInfo={contactInfo}
-        educationInfo={educationInfo}
-        experienceInfo={experienceInfo}
+        contactInfo={contact}
+        educationInfo={education}
+        experienceInfo={experience}
       />
     </>
   );
